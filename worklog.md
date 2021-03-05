@@ -26,4 +26,5 @@
 1-145pm: Research Profile creation, started profile blueprint
 145-225pm: Research for Profile state and link to firestore
 225-315pm: Found some user profile tutorial gold. Doing some Reading
+315-345pm: Learning about materializecss and adding framework for new draft of project
 ```
