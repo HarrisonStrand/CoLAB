@@ -33,4 +33,5 @@
 750-820pm: Add Signin/Register Components with onChange/onSubmit listeners and routes in App.js
 820-915pm: Add css styling to html,body,forms and started implimenting redux
 915-945pm: Add Research for props. Add props for seeded data and initial postlist state
+945-1045pm: Add functionality for thunk and create post state to console
 ```
