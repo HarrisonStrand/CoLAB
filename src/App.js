@@ -8,6 +8,9 @@ class App extends Component {
     <BrowserRouter>
       <div className="App">
         <Navbar />
+        {/* <Switch>
+          <Route path='/' component={Dashboard}/>
+        </Switch> */}
       </div>
     </BrowserRouter>
     )
