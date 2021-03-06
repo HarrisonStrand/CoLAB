@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
+import Dashboard from './components/dashboard/Dashboard';
+import PostDetail from './components/posts/PostDetail';
 
 class App extends Component {
   render (){
@@ -8,9 +10,10 @@ class App extends Component {
     <BrowserRouter>
       <div className="App">
         <Navbar />
-        {/* <Switch>
-          <Route path='/' component={Dashboard}/>
-        </Switch> */}
+        <Switch>
+          <Route exact path='/' component={Dashboard}/>
+          <Route path='/post/:id' component={PostDetail}/>
+        </Switch>
       </div>
     </BrowserRouter>
     )

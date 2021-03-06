@@ -29,4 +29,5 @@
 315-345pm: Learning about materializecss and adding framework for new draft of project
 345-430pm: Applying learned templating for Dashboard, Layout, and PostList directories. Materializecss is AWESOME
 430-5pm: Adding switch routes to App
+715-750pm: Add Post Details and reusable post summary components
 ```
