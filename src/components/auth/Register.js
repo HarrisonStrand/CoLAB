@@ -24,7 +24,7 @@ class Register extends Component {
 		return (
 			<div className='container'>
 				<form onSubmit={this.handleSubmit} className="white">
-					<h5 className="grey-text text-darken-3">Sign In</h5>
+					<h5 className="grey-text text-darken-3">Register</h5>
 					<div className="input-field">
 						<label htmlFor="firstName">First Name</label>
 						<input type="text" id='firstName'onChange={this.handleChange} />
@@ -42,7 +42,7 @@ class Register extends Component {
 						<input type="password" id='password'onChange={this.handleChange} />
 					</div>
 					<div className="input-field">
-						<button className="btn grey lighten-1">Log In</button>
+						<button className="btn blue lighten-1">Register</button>
 					</div>
 				</form>
 			</div>

@@ -5,6 +5,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import PostDetail from './components/posts/PostDetail';
 import SignIn from './components/auth/SignIn';
 import Register from './components/auth/Register';
+import CreatePost from './components/posts/CreatePost';
 
 class App extends Component {
   render (){
@@ -17,6 +18,7 @@ class App extends Component {
           <Route path='/post/:id' component={PostDetail}/>
           <Route path='/signin' component={SignIn} />
           <Route path='/register' component={Register} />
+          <Route path='/createpost' component={CreatePost} />
         </Switch>
       </div>
     </BrowserRouter>
