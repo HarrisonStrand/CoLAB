@@ -43,4 +43,5 @@
 1030-1050am: Add firestore connect to display created posts
 1050-12pm: Add signin and signout capabilities using firebase auth
 1-150pm: Add content blockers and dynamic initials for profile login/logout with error catching
+150-240pm: Add moment for timestamps of post creation and post details
 ```
