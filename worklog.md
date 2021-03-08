@@ -35,3 +35,10 @@
 915-945pm: Add Research for props. Add props for seeded data and initial postlist state
 945-1045pm: Add functionality for thunk and create post state to console
 ```
+
+### 3-8-21
+
+```
+915-1030am: Add post create action to firestore database
+1030-1050am: Add firestore connect to display created posts
+```
