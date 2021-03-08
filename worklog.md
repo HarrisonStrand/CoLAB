@@ -41,4 +41,5 @@
 ```
 915-1030am: Add post create action to firestore database
 1030-1050am: Add firestore connect to display created posts
+1050-12pm: Add signin and signout capabilities using firebase auth
 ```
