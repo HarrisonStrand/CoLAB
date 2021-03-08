@@ -2,10 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { firebaseConnect, firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
+import { Redirect } from 'react-router-dom';
 
 const PostDetail = (props) => {
 
-	const { post } = props;
+	const { post, auth } = props;
+	if (!auth.uid) return <Redirect to='/signin' />
 	if (post) {
 		return (
 			<div className="container section post-detail">
@@ -37,7 +39,8 @@ const mapStateToProps = (state, ownProps) => {
 	const posts = state.firestore.data.posts;
 	const post = posts ? posts[id] : null
 	return {
-		post: post
+		post: post,
+		auth: state.firebase.auth
 	}
 }
 
