@@ -11,7 +11,7 @@ export const createPost = (post) => {
 			authorId: authorId,
 			createdAt: new Date()
 		}).then(() => {
-			dispatch({ type: 'CREATE_POST', post: post});
+			dispatch({ type: 'CREATE_POST', post});
 		}).catch((error) => {
 			dispatch({ type: 'CREAT_POST_ERROR', error });
 		})
