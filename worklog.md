@@ -56,5 +56,6 @@
 10-11am: Add research for updating user profile information
 11-1210pm: Add research for formik and yup for profile form submitting
 1-2pm: Add more research for formik and yup for state handling. Add media queries research for wrapping a main theme
+2-250pm: Add refactor to no global styles and no formik/yup capabilities
 
 ```

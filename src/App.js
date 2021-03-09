@@ -7,12 +7,6 @@ import SignIn from './components/auth/SignIn';
 import Register from './components/auth/Register';
 import CreatePost from './components/posts/CreatePost';
 import UserProfile from './components/auth/userProfile/UserProfile';
-// import styled from 'styled-components';
-
-// const MainWrapper = styled.div`
-// width: 100%;
-// min-height: calc(100vh -6rem);
-// `;
 
 class App extends Component {
   render (){
