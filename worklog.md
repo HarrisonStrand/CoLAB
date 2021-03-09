@@ -53,4 +53,5 @@
 
 ```
 830-10am: Add Profile values to userprofile component. Add research for react checkboxes and firestore
+10-11am: Add research for updating user profile information
 ```

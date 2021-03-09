@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 
 const UserProfile = (props) => {
 	const { auth, profile } = props;
@@ -14,7 +14,8 @@ const UserProfile = (props) => {
 							<p>DAW: {profile.DefaultDAW}</p>
 							<p>Gear: {profile.Gear}</p>
 							<p>Bio: {profile.Genres}</p>
-							
+							<p>Email: {auth.email}</p>
+							<NavLink to= {'/edituserprofile' + auth.uid} key = {auth.uid}>Edit Profile</NavLink>
 					</div>
 				</div>
 			</div>
