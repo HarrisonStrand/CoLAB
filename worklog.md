@@ -48,3 +48,9 @@
 335-420pm: Add research for firebase deployment
 420-515pm: Add initial framework files for profile editing functionality
 ```
+
+### 3-9-21
+
+```
+830-10am: Add Profile values to userprofile component. Add research for react checkboxes and firestore
+```
