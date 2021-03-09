@@ -10,6 +10,10 @@ import thunk from 'redux-thunk';
 import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
 import fbConfig from './config/fbConfig';
+import { ThemeProvider } from 'styled-components'
+
+import theme from './utils/theme';
+import GlobalStyles from './utils/global';
 
 const store = createStore(rootReducer,
   compose(
@@ -21,11 +25,16 @@ const store = createStore(rootReducer,
 
 store.firebaseAuthIsReady.then(() => {
   ReactDOM.render(
-    <React.StrictMode>
-      <Provider store={store}>
+
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <>
         <App />
-      </Provider>
-    </React.StrictMode>,
+        <GlobalStyles/>
+      </>
+    </ThemeProvider>
+  </Provider>,
+
     document.getElementById('root')
   );
 });

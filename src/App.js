@@ -7,23 +7,29 @@ import SignIn from './components/auth/SignIn';
 import Register from './components/auth/Register';
 import CreatePost from './components/posts/CreatePost';
 import UserProfile from './components/auth/userProfile/UserProfile';
+// import styled from 'styled-components';
+
+// const MainWrapper = styled.div`
+// width: 100%;
+// min-height: calc(100vh -6rem);
+// `;
 
 class App extends Component {
   render (){
     return(
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path='/' component={Dashboard}/>
-          <Route path='/post/:id' component={PostDetail}/>
-          <Route path='/signin' component={SignIn} />
-          <Route path='/register' component={Register} />
-          <Route path='/createpost' component={CreatePost} />
-          <Route path='/userprofile' component={UserProfile} />
-        </Switch>
-      </div>
-    </BrowserRouter>
+      <BrowserRouter>
+          <div className="App">
+            <Navbar />
+            <Switch>
+              <Route exact path='/' component={Dashboard}/>
+              <Route path='/post/:id' component={PostDetail}/>
+              <Route path='/signin' component={SignIn} />
+              <Route path='/register' component={Register} />
+              <Route path='/createpost' component={CreatePost} />
+              <Route path='/userprofile' component={UserProfile} />
+            </Switch>
+          </div>
+        </BrowserRouter>
     )
   }
 }
