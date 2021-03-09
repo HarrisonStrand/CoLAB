@@ -45,5 +45,6 @@
 1-150pm: Add content blockers and dynamic initials for profile login/logout with error catching
 150-240pm: Add moment for timestamps of post creation and post details
 240-335pm: Add configuration for cloud functions in firebase and firebase security rules
-335-220pm: Add research for firebase deployment
+335-420pm: Add research for firebase deployment
+420-515pm: Add initial framework files for profile editing functionality
 ```
