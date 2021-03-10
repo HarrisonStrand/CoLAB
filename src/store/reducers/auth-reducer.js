@@ -1,5 +1,15 @@
 const initState ={
-	authError: null
+	authError: null,
+	error: null,
+  loading: false,
+	profileEdit: {
+    error: null,
+    loading: false,
+  },
+  deleteUser: {
+    loading: false,
+    error: null,
+  },
 }
 
 const authReducer = (state = initState, action) => {
@@ -31,6 +41,23 @@ const authReducer = (state = initState, action) => {
 				...state,
 				authError: action.error.message
 			}
+			case 'PROFILE_EDIT_START':
+				return {
+					...state,
+					profileEdit: { ...state.profileEdit, loading: true },
+				};
+	
+			case 'PROFILE_EDIT_SUCCESS':
+				return {
+					...state,
+					profileEdit: { ...state.profileEdit, loading: false, error: false },
+				};
+	
+			case 'PROFILE_EDIT_FAIL':
+				return {
+					...state,
+					profileEdit: { ...state.profileEdit, loading: false, error: true },
+				};
 		default:
 			return state;
 	}

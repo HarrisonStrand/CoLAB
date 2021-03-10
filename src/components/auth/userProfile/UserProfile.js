@@ -2,11 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
-const UserProfile = (props, {users}) => {
+const UserProfile = (props) => {
 
-	const { profile, auth } = props;
+	const { auth, profile } = props;
 	const Gear = profile.Gear;
 	const Genres = profile.Genres;
 
@@ -51,6 +51,7 @@ const UserProfile = (props, {users}) => {
 					</div>
 				</div>
 			</div>
+			<Link to={'/edituserprofile/'} key = {auth.uid}>Edit Profile</Link>
 		</div>
 		)
 	}

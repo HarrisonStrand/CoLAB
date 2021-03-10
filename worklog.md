@@ -58,5 +58,6 @@
 1-2pm: Add more research for formik and yup for state handling. Add media queries research for wrapping a main theme
 2-250pm: Add refactor to no global styles and no formik/yup capabilities
 250-415pm: Research on edit profile information and mapping profile attributes to Profile component
+415-510pm: Add new initial state for created profiles. Add starting tweaks to Edit Profile functionality
 
 ```

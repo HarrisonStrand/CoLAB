@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component, } from 'react'
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { register } from '../../store/actions/auth-actions';
+import firebase from 'firebase'
+import { editUserProfile } from '../../../store/actions/auth-actions';
 
-class Register extends Component {
+class EditUserProfile extends Component {
 
 	state = {
-		email: '',
-		password: '',
-		firstName: '',
-		lastName: ''
+		email: firebase.auth.email,
+		password: firebase.auth.password,
+		firstName: firebase.auth.firstName,
+		lastName: firebase.auth.lastName
 	}
 
 	handleChange = (event) => {
@@ -20,17 +21,19 @@ class Register extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		this.props.(this.state)
+		this.props.editUserProfile(this.state)
+		console.log(this.state)
+		// this.props.(this.state)
 
 	}
 
 	render() {
 		const { auth, authError } = this.props;
-		if (auth.uid) return <Redirect to='/' />
+		if (!auth.uid) return <Redirect to='/signin' />
 		return (
 			<div className='container'>
 				<form onSubmit={this.handleSubmit} className="white">
-					<h5 className="grey-text text-darken-3">Register</h5>
+					<h5 className="grey-text text-darken-3">Edit Profile</h5>
 					<div className="input-field">
 						<label htmlFor="firstName">First Name</label>
 						<input type="text" id='firstName'onChange={this.handleChange} />
@@ -48,7 +51,7 @@ class Register extends Component {
 						<input type="password" id='password'onChange={this.handleChange} />
 					</div>
 					<div className="input-field">
-						<button className="btn blue lighten-1">Register</button>
+						<button className="btn blue lighten-1">Submit</button>
 					</div>
 					<div className="red-text center">
 						{ authError ? <p>{ authError }</p> : null }
@@ -68,8 +71,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		register: (newUser) => dispatch(register(newUser))
+		editUserProfile: (updatedUser) => dispatch(editUserProfile(updatedUser))
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register)
+export default connect(mapStateToProps, mapDispatchToProps)(EditUserProfile)

@@ -30,12 +30,19 @@ export const register = (newUser) => {
 
 		firebase.auth().createUserWithEmailAndPassword(
 			newUser.email,
-			newUser.password
+			newUser.password,
 		).then((response) => {
 			return firestore.collection('users').doc(response.user.uid).set({
 				firstName: newUser.firstName,
 				lastName: newUser.lastName,
-				initials: newUser.firstName[0] + newUser.lastName[0]
+				initials: newUser.firstName[0] + newUser.lastName[0],
+				Bio: '',
+				Gear: [],
+				Genres: [],
+				Workflow: '',
+				DefaultDAW: '',
+				email: newUser.email
+				
 			})
 		}).then(() => {
 			dispatch({ type: 'REGISTER_SUCCESS' })
@@ -44,3 +51,36 @@ export const register = (newUser) => {
 		})
 	}
 }
+
+export const editUserProfile = data => async (
+  dispatch,
+  getState,
+  { getFirebase, getFirestore }
+) => {
+  const firebase = getFirebase();
+  const firestore = getFirestore();
+  const user = firebase.auth().currentUser;
+  const { uid: userId, email: userEmail } = getState().firebase.auth;
+  dispatch({ type: 'PROFILE_EDIT_START' });
+  try {
+    //edit the user profile
+    if (data.email !== userEmail) {
+      await user.updateEmail(data.email);
+    }
+
+    await firestore
+      .collection('users')
+      .doc(userId)
+      .set({
+        firstName: data.firstName,
+        lastName: data.lastName,
+      });
+
+    if (data.password.length > 6) {
+      await user.updatePassword(data.password);
+    }
+    dispatch({ type: 'PROFILE_EDIT_SUCCESS' });
+  } catch (err) {
+    dispatch({ type: 'PROFILE_EDIT_FAIL', payload: err.message });
+  }
+};

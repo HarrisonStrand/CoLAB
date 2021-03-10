@@ -9,7 +9,12 @@ class Register extends Component {
 		email: '',
 		password: '',
 		firstName: '',
-		lastName: ''
+		lastName: '',
+		Gear: [],
+		Bio: '',
+		Workflow: '',
+		DefautDAW: '',
+		Genres: []
 	}
 
 	handleChange = (event) => {
