@@ -70,16 +70,18 @@ export const editUserProfile = data => async (
         firstName: data.firstName,
         lastName: data.lastName,
 				initials: data.firstName[0] + data.lastName[0],
-				Gear: data.Gear
+				Gear: data.Gear,
+				Bio: data.Bio
       })
 			.add({
-				Gear: data.Gear
+				Gear: data.Gear,
+				Bio: data.Bio
 			})
 
     if (data.password.length >= 6) {
       await user.updatePassword(data.password);
     }
-    dispatch({ type: 'PROFILE_EDIT_SUCCESS' });
+    dispatch({ type: 'PROFILE_EDIT_SUCCESS' })
   } catch (err) {
     dispatch({ type: 'PROFILE_EDIT_FAIL', payload: err.message });
   }

@@ -8,6 +8,7 @@ import Register from './components/auth/Register';
 import CreatePost from './components/posts/CreatePost';
 import UserProfile from './components/auth/userProfile/UserProfile';
 import EditUserProfile from './components/auth/userProfile/EditUserProfile';
+import EditBio from './components/auth/userProfile/attributes/EditBio';
 
 class App extends Component {
   render (){
@@ -23,6 +24,7 @@ class App extends Component {
               <Route path='/createpost' component={CreatePost} />
               <Route path='/userprofile' component={UserProfile} />
               <Route path='/edituserprofile' component={EditUserProfile} />
+              <Route path='/editbio' component={EditBio} />
             </Switch>
           </div>
         </BrowserRouter>

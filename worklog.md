@@ -69,4 +69,5 @@
 10-11am: Add Research for Materialize checkboxes
 11-1150am: Add handleGear function for Gear checkboxes for firebase auth
 12-135pm: Add User Profile display for attributes
+135-240pm: Add EditBio Component functionality
 ```

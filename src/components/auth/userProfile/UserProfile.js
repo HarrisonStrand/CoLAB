@@ -50,6 +50,7 @@ const UserProfile = (props) => {
 				</div>
 			</div>
 			<Link to={'/edituserprofile/'} key = {auth.uid}>Edit Profile</Link>
+			<Link to={'/editbio/'} key = {auth.uid}>Edit Bio</Link>
 		</div>
 		)
 	}
