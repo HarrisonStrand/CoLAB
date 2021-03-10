@@ -7,43 +7,44 @@ import { editUserProfile } from '../../../store/actions/auth-actions';
 class EditUserProfile extends Component {
 
 
-	constructor(props) {
-    super(props);
-    this.state = {
-      isGoing: true,
-    };
+	// constructor(props) {
+  //   super(props);
+  //   this.state = {
+	// 		email: firebase.auth.email,
+	// 		password: firebase.auth.password,
+	// 		firstName: firebase.auth.firstName,
+	// 		lastName: firebase.auth.lastName,
+	// 		initials: firebase.auth.initials,
+  //   };
 
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
+  //   this.handleInputChange = this.handleInputChange.bind(this);
+  // }
 
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    this.setState({
-      [name]: value    });
-  }
+  // handleInputChange(event) {
+	// 	this.setState({
+	// 		[name]: value    });
+	// 	}
 	state = {
 		email: firebase.auth.email,
 		password: firebase.auth.password,
 		firstName: firebase.auth.firstName,
 		lastName: firebase.auth.lastName,
 		initials: firebase.auth.initials,
-		// Gear: firebase.auth.Gear,
-		GearNames: {
-			MPC: false,
+		Gear: [
+			{id: 1, value: "MPC", isChecked: false},
+			{id: 2, value: "MPK61", isChecked: false},
+		]
 		}
-	}
 
-	// chkclick = (event) => {
-	// 	var {name,checked} = event.target;
-
-	// 	this.setState((event) => {
-	// 		selectedGear = event.GearNames
-	// 		return selectedGear[name] = checked
-	// 	})
-	// }
-
+	handleGear = (event => {
+		let GearSelect = this.state.Gear
+		GearSelect.forEach(Gear => {
+      if (Gear.value === event.target.value)
+          Gear.isChecked =  event.target.checked
+					this.setState({GearSelect: GearSelect})
+    })
+	})
+			
 	handleChange = (event) => {
 		this.setState({
 			[event.target.id]: event.target.value
@@ -86,12 +87,12 @@ class EditUserProfile extends Component {
 					<div className="input-field">
 						<p>
 							<label>
-								<input type="checkbox" checked="" onChange={this.handleChange}/>
+								<input type="checkbox" id='1' value='MPC' onChange={this.handleCheckbox}/>
 								<span>MPC</span>
-								<input type="checkbox" checked="" onChange={this.handleChange}/>
-								<span>MPC</span>
-								<input type="checkbox" checked="" onChange={this.handleChange}/>
-								<span>MPC</span>
+							</label>
+							<label>
+								<input type="checkbox" id='2' value='MPK61' onChange={this.handleCheckbox}/>
+								<span>MPK61</span>
 							</label>
 						</p>
 					</div>
