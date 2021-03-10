@@ -32,18 +32,16 @@ export const register = (newUser) => {
 			newUser.email,
 			newUser.password,
 		).then((response) => {
-			return firestore.collection('users').doc(response.user.uid).set({
+			return firestore.collection('users').doc(response.user.uid)
+			.set({
 				firstName: newUser.firstName,
 				lastName: newUser.lastName,
 				initials: newUser.firstName[0] + newUser.lastName[0],
-				Bio: '',
-				Gear: [],
-				Genres: [],
-				Workflow: '',
-				DefaultDAW: '',
-				email: newUser.email
-				
 			})
+			.add({
+				blah: newUser.blah,
+			})
+				
 		}).then(() => {
 			dispatch({ type: 'REGISTER_SUCCESS' })
 		}).catch(error => {
@@ -74,9 +72,10 @@ export const editUserProfile = data => async (
       .set({
         firstName: data.firstName,
         lastName: data.lastName,
+				initials: data.firstName[0] + data.lastName[0],
       });
 
-    if (data.password.length > 6) {
+    if (data.password.length >= 6) {
       await user.updatePassword(data.password);
     }
     dispatch({ type: 'PROFILE_EDIT_SUCCESS' });

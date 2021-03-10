@@ -61,3 +61,9 @@
 415-510pm: Add new initial state for created profiles. Add starting tweaks to Edit Profile functionality
 
 ```
+
+### 3-10-21
+
+```
+830-955am: Add EditUserProfile functionality to project
+```

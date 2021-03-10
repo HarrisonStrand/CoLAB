@@ -10,7 +10,8 @@ class EditUserProfile extends Component {
 		email: firebase.auth.email,
 		password: firebase.auth.password,
 		firstName: firebase.auth.firstName,
-		lastName: firebase.auth.lastName
+		lastName: firebase.auth.lastName,
+		initials: firebase.auth.initials
 	}
 
 	handleChange = (event) => {
@@ -30,13 +31,14 @@ class EditUserProfile extends Component {
 	render() {
 		const { auth, authError } = this.props;
 		if (!auth.uid) return <Redirect to='/signin' />
+
 		return (
 			<div className='container'>
 				<form onSubmit={this.handleSubmit} className="white">
 					<h5 className="grey-text text-darken-3">Edit Profile</h5>
 					<div className="input-field">
 						<label htmlFor="firstName">First Name</label>
-						<input type="text" id='firstName'onChange={this.handleChange} />
+						<input type="text" id='firstName' onChange={this.handleChange} />
 					</div>
 					<div className="input-field">
 						<label htmlFor="lastName">Last Name</label>
