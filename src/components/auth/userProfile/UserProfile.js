@@ -8,7 +8,6 @@ const UserProfile = (props) => {
 
 	const { auth, profile } = props;
 	const Gear = profile.Gear;
-	const Genres = profile.Genres;
 
 	if (!auth.uid) return <Redirect to='/signin' />
 	if (profile) {
@@ -37,18 +36,19 @@ const UserProfile = (props) => {
 						</div>
 					<br></br>
 						<h4>Gear:</h4>
-					<div className="attributeDisplay">
+						<p>{Gear}</p>
+					{/* <div className="attributeDisplay">
 						{Gear.map(item => (
 							<div key={item.id}>{item}</div>
 							))}
-					</div>
+					</div> */}
 					<br></br>
-						<h4>Genres:</h4>
+						{/* <h4>Genres:</h4>
 					<div className='attributeDisplay'>
 						{Genres.map(item => (
 							<div key={item.id}>{item}</div>
 						))}
-					</div>
+					</div> */}
 				</div>
 			</div>
 			<Link to={'/edituserprofile/'} key = {auth.uid}>Edit Profile</Link>

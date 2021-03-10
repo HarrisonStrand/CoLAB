@@ -6,13 +6,43 @@ import { editUserProfile } from '../../../store/actions/auth-actions';
 
 class EditUserProfile extends Component {
 
+
+	constructor(props) {
+    super(props);
+    this.state = {
+      isGoing: true,
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    this.setState({
+      [name]: value    });
+  }
 	state = {
 		email: firebase.auth.email,
 		password: firebase.auth.password,
 		firstName: firebase.auth.firstName,
 		lastName: firebase.auth.lastName,
-		initials: firebase.auth.initials
+		initials: firebase.auth.initials,
+		// Gear: firebase.auth.Gear,
+		GearNames: {
+			MPC: false,
+		}
 	}
+
+	// chkclick = (event) => {
+	// 	var {name,checked} = event.target;
+
+	// 	this.setState((event) => {
+	// 		selectedGear = event.GearNames
+	// 		return selectedGear[name] = checked
+	// 	})
+	// }
 
 	handleChange = (event) => {
 		this.setState({
@@ -51,6 +81,19 @@ class EditUserProfile extends Component {
 					<div className="input-field">
 						<label htmlFor="password">Password</label>
 						<input type="password" id='password'onChange={this.handleChange} />
+					</div>
+						<label htmlFor="Gear">Gear</label>
+					<div className="input-field">
+						<p>
+							<label>
+								<input type="checkbox" checked="" onChange={this.handleChange}/>
+								<span>MPC</span>
+								<input type="checkbox" checked="" onChange={this.handleChange}/>
+								<span>MPC</span>
+								<input type="checkbox" checked="" onChange={this.handleChange}/>
+								<span>MPC</span>
+							</label>
+						</p>
 					</div>
 					<div className="input-field">
 						<button className="btn blue lighten-1">Submit</button>

@@ -38,9 +38,6 @@ export const register = (newUser) => {
 				lastName: newUser.lastName,
 				initials: newUser.firstName[0] + newUser.lastName[0],
 			})
-			.add({
-				blah: newUser.blah,
-			})
 				
 		}).then(() => {
 			dispatch({ type: 'REGISTER_SUCCESS' })
@@ -73,7 +70,11 @@ export const editUserProfile = data => async (
         firstName: data.firstName,
         lastName: data.lastName,
 				initials: data.firstName[0] + data.lastName[0],
-      });
+				Gear: data.Gear
+      })
+			.add({
+				Gear: data.Gear
+			})
 
     if (data.password.length >= 6) {
       await user.updatePassword(data.password);
