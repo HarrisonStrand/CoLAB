@@ -68,5 +68,5 @@
 830-955am: Add EditUserProfile functionality to project
 10-11am: Add Research for Materialize checkboxes
 11-1150am: Add handleGear function for Gear checkboxes for firebase auth
-
+12-135pm: Add User Profile display for attributes
 ```

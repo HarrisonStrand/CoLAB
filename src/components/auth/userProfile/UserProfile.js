@@ -7,7 +7,6 @@ import { Redirect, Link } from 'react-router-dom';
 const UserProfile = (props) => {
 
 	const { auth, profile } = props;
-	const Gear = profile.Gear;
 
 	if (!auth.uid) return <Redirect to='/signin' />
 	if (profile) {
@@ -36,17 +35,16 @@ const UserProfile = (props) => {
 						</div>
 					<br></br>
 						<h4>Gear:</h4>
-						<p>{Gear}</p>
-					{/* <div className="attributeDisplay">
-						{Gear.map(item => (
-							<div key={item.id}>{item}</div>
+					<div className="attributeDisplay">
+						{profile.Gear.map(item => (
+							<p key={item.value}>{item.value}</p>
 							))}
-					</div> */}
+					</div>
 					<br></br>
 						{/* <h4>Genres:</h4>
 					<div className='attributeDisplay'>
 						{Genres.map(item => (
-							<div key={item.id}>{item}</div>
+							<div key={item.value}>{item.value}</div>
 						))}
 					</div> */}
 				</div>
