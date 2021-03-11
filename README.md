@@ -68,7 +68,7 @@ Google login
 
 ## State Component Diagram
 
-<img src="./src/img/TapRoomDiagram.png" width="500px" height="auto">
+<img src="./src/img/CoLAB.png" width="500px" height="auto">
 
 ## Setup/Installation Requirements
 
@@ -190,6 +190,7 @@ If any further errors or bugs occur with installation, please email me, <harriso
 - Node
 - React
 - Redux
+- Thunk
 - CSS
 - Firebase
 - Firestore
