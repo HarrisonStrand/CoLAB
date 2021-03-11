@@ -87,12 +87,12 @@ class EditUserProfile extends Component {
 					{/* <div className="input-field"> */}
 						<label htmlFor="firstName">First Name</label>
 						<br></br>
-						<input type="text" id='firstName' defaultValue={auth.firstName} onChange={this.handleChange} />
+						<input type="text" id='firstName' defaultValue={profile.firstName} onChange={this.handleChange} />
 					{/* </div> */}
 					<div className="input-field">
 						<label htmlFor="lastName">Last Name</label>
 						<br></br>
-						<input type="text" id='lastName' onChange={this.handleChange} />
+						<input type="text" id='lastName' defaultValue={profile.lastName} onChange={this.handleChange} />
 					</div>
 					<div className="input-field">
 						<label htmlFor="bio">Bio</label>
