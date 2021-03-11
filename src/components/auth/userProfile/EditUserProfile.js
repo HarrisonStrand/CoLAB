@@ -14,8 +14,8 @@ class EditUserProfile extends Component {
 		initials: firebase.auth.initials,
 		Bio: firebase.auth.Bio,
 		Gear: [
-			{id: 1, value: "MPC", isChecked: false},
-			{id: 2, value: "MPK61", isChecked: false},
+			{id: 1, value: "MPC", isChecked: ""},
+			{id: 2, value: "MPK61", isChecked: ""},
 		]
 		}
 
@@ -71,7 +71,7 @@ class EditUserProfile extends Component {
 					<div className="input-field">
 						<label htmlFor="email">Email</label>
 						<br></br>
-						<input type="email" id='email'defaultValue={auth.Gear[0]} onChange={this.handleChange} />
+						<input type="email" id='email'defaultValue={auth.email} onChange={this.handleChange} />
 					</div>
 					<div className="input-field">
 						<label htmlFor="password">Password</label>
