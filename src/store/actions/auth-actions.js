@@ -42,9 +42,6 @@ export const register = (newUser) => {
 				genres: newUser.genres,
 				workflow: newUser.workflow,
 				daw: newUser.daw
-		// 	})
-		// }).then((response) => {
-		// 	return firestore.collection('users').add({
 			})
 		}).then(() => {
 			dispatch({ type: 'REGISTER_SUCCESS' })
@@ -53,7 +50,6 @@ export const register = (newUser) => {
 		})
 	}
 }
-
 
 export const editUserProfile = data => async (
   dispatch,
@@ -78,12 +74,18 @@ export const editUserProfile = data => async (
         firstName: data.firstName,
         lastName: data.lastName,
 				initials: data.firstName[0] + data.lastName[0],
-				Gear: data.Gear,
-				Bio: data.Bio
+				gear: data.gear,
+				bio: data.bio,
+				genres: data.genres,
+				workflow: data.workflow,
+				daw: data.daw
       })
 			.add({
-				Gear: data.Gear,
-				Bio: data.Bio
+				gear: data.gear,
+				bio: data.bio,
+				genres: data.genres,
+				workflow: data.workflow,
+				daw: data.daw
 			})
 
     if (data.password.length >= 6) {

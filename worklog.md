@@ -73,4 +73,5 @@
 240-440pm: Add DefaultValues for EditProfile form
 440-5pm: Add research for defaultValue checkboxes
 5-7pm: Add bug fix for invalid key values in Register component
+7-840pm: Add genre and gear full list for Profile Edit
 ```

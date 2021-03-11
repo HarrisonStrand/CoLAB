@@ -31,3 +31,7 @@ input[type=password]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]){
   border-color: rgb(12, 121, 246);
 }
+
+span {
+  padding-right: 20px;
+}

@@ -21,32 +21,34 @@ const UserProfile = (props) => {
 					<br></br>
 					<h4>Bio:</h4>
 						<div className="attributeDisplay">
-							{ profile.Bio} 
+							{ profile.bio} 
 						</div>
 					<br></br>
-					<h4>Workflow:</h4>
+					<h4>Workflow Description:</h4>
 						<div className="attributeDisplay">
-							{ profile.Workflow} 
+							{ profile.workflow} 
 						</div>
 					<br></br>
 					<h4>Default DAW:</h4>
 						<div className="attributeDisplay">
-							{ profile.DefaultDAW} 
+							{ profile.daw} 
 						</div>
 					<br></br>
-						<h4>Gear:</h4>
+						<h4>Available Gear:</h4>
 					<div className="attributeDisplay">
+
+					
 						{profile.gear.map(item => (
 							<p key={item.value}>{item.value}</p>
 							))}
 					</div>
 					<br></br>
-						{/* <h4>Genres:</h4>
+						<h4>Genre Interests:</h4>
 					<div className='attributeDisplay'>
-						{Genres.map(item => (
+						{profile.genres.map(item => (
 							<div key={item.value}>{item.value}</div>
 						))}
-					</div> */}
+					</div>
 				</div>
 			</div>
 			<Link to={'/edituserprofile/'} key = {auth.uid}>Edit Profile</Link>
