@@ -37,10 +37,14 @@ export const register = (newUser) => {
 				firstName: newUser.firstName,
 				lastName: newUser.lastName,
 				initials: newUser.firstName[0] + newUser.lastName[0],
-				// Bio: newUser.Bio,
-				// Gear: newUser.Gear,
-				// Workflow: newUser.Workflow,
-				// DefaultDAW: newUser.DefaultDAW,
+				bio: newUser.bio,
+				gear: newUser.gear,
+				genres: newUser.genres,
+				workflow: newUser.workflow,
+				daw: newUser.daw
+		// 	})
+		// }).then((response) => {
+		// 	return firestore.collection('users').add({
 			})
 		}).then(() => {
 			dispatch({ type: 'REGISTER_SUCCESS' })
@@ -49,6 +53,7 @@ export const register = (newUser) => {
 		})
 	}
 }
+
 
 export const editUserProfile = data => async (
   dispatch,

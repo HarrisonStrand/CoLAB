@@ -14,8 +14,8 @@ class EditUserProfile extends Component {
 		initials: firebase.auth.initials,
 		Bio: firebase.auth.Bio,
 		Gear: [
-			{id: 1, value: "MPC", isChecked: ""},
-			{id: 2, value: "MPK61", isChecked: ""},
+			{id: 1, value: "MPC", isChecked: true},
+			{id: 2, value: "MPK61", isChecked: true},
 		]
 		}
 
@@ -47,7 +47,6 @@ class EditUserProfile extends Component {
 		// const firebase = getFirebase()
 		const { auth, authError, profile} = this.props;
 		if (!auth.uid) return <Redirect to='/signin' />
-		console.log(auth);
 
 		return (
 			<div className='container'>
@@ -61,22 +60,22 @@ class EditUserProfile extends Component {
 					<div className="input-field">
 						<label htmlFor="lastName">Last Name</label>
 						<br></br>
-						<input type="text" id='lastName'defaultValue={profile.lastName} onChange={this.handleChange} />
+						<input type="text" id='lastName' onChange={this.handleChange} />
 					</div>
 					<div className="input-field">
 						<label htmlFor="Bio">Bio</label>
 						<br></br>
-						<input type="text" id='Bio' defaultValue={profile.Bio} onChange={this.handleChange} />
+						<input type="text" id='Bio' onChange={this.handleChange} />
 					</div>
 					<div className="input-field">
 						<label htmlFor="email">Email</label>
 						<br></br>
-						<input type="email" id='email'defaultValue={auth.email} onChange={this.handleChange} />
+						<input type="email" id='email' onChange={this.handleChange} />
 					</div>
 					<div className="input-field">
 						<label htmlFor="password">Password</label>
 						<br></br>
-						<input type="password" id='password'defaultValue={auth.password} onChange={this.handleChange} />
+						<input type="password" id='password' onChange={this.handleChange} />
 					</div>
 						<label htmlFor="Gear">Gear</label>
 						<br></br>
@@ -93,9 +92,7 @@ class EditUserProfile extends Component {
 						</p>
 					</div>
 					<div className="input-field">
-						<Link to='/userprofile'>
 							<button className="btn blue lighten-1">Submit</button>
-						</Link>
 					</div>
 					<div className="red-text center">
 						{ authError ? <p>{ authError }</p> : null }

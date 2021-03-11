@@ -72,4 +72,5 @@
 135-240pm: Add EditBio Component functionality
 240-440pm: Add DefaultValues for EditProfile form
 440-5pm: Add research for defaultValue checkboxes
+5-7pm: Add bug fix for invalid key values in Register component
 ```

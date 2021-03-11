@@ -36,7 +36,7 @@ const UserProfile = (props) => {
 					<br></br>
 						<h4>Gear:</h4>
 					<div className="attributeDisplay">
-						{profile.Gear.map(item => (
+						{profile.gear.map(item => (
 							<p key={item.value}>{item.value}</p>
 							))}
 					</div>

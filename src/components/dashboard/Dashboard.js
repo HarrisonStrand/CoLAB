@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 
 class Dashboard extends Component {
 	render() {
-		const { posts, auth } = this.props;
+		const { posts, auth, } = this.props;
 		if (!auth.uid) return <Redirect to='/signin' />
 		return (
 			<div className="dashboard container">
@@ -22,7 +22,6 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log(state)
 	return {
 		posts: state.firestore.ordered.posts, // post from post reducer prop, then posts from initial state prop
 		auth: state.firebase.auth
@@ -32,6 +31,6 @@ const mapStateToProps = (state) => {
 export default compose(
 	connect(mapStateToProps),
 	firestoreConnect([
-		{ collection: 'posts', orderBy: ['createdAt', 'desc']}
+		{ collection: 'posts', orderBy: ['createdAt', 'desc']},
 	])
 )(Dashboard)

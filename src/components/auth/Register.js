@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import firebase from 'firebase';
 import { register } from '../../store/actions/auth-actions';
 
 class Register extends Component {
@@ -10,12 +11,25 @@ class Register extends Component {
 		password: '',
 		firstName: '',
 		lastName: '',
-		Gear: [],
-		Bio: '',
-		Workflow: '',
-		DefautDAW: '',
-		Genres: []
+		gear: [],
+		bio: '',
+		workflow: '',
+		daw: '',
+		genres: []
 	}
+
+	// state = {
+	// 	email: firebase.auth.email,
+	// 	password: firebase.auth.password,
+	// 	firstName: firebase.auth.firstName,
+	// 	lastName: firebase.auth.lastName,
+	// 	initials: firebase.auth.initials,
+	// 	Bio: firebase.auth.Bio,
+	// 	Gear: [
+	// 		{id: 1, value: "MPC", isChecked: true},
+	// 		{id: 2, value: "MPK61", isChecked: true},
+	// 	]
+	// 	}
 
 	handleChange = (event) => {
 		this.setState({
