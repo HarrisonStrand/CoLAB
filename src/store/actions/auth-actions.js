@@ -37,8 +37,11 @@ export const register = (newUser) => {
 				firstName: newUser.firstName,
 				lastName: newUser.lastName,
 				initials: newUser.firstName[0] + newUser.lastName[0],
+				// Bio: newUser.Bio,
+				// Gear: newUser.Gear,
+				// Workflow: newUser.Workflow,
+				// DefaultDAW: newUser.DefaultDAW,
 			})
-				
 		}).then(() => {
 			dispatch({ type: 'REGISTER_SUCCESS' })
 		}).catch(error => {
@@ -55,7 +58,7 @@ export const editUserProfile = data => async (
   const firebase = getFirebase();
   const firestore = getFirestore();
   const user = firebase.auth().currentUser;
-  const { uid: userId, email: userEmail } = getState().firebase.auth;
+  const { uid: userId, email: userEmail} = getState().firebase.auth;
   dispatch({ type: 'PROFILE_EDIT_START' });
   try {
     //edit the user profile

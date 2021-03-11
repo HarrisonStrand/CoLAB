@@ -50,7 +50,6 @@ const UserProfile = (props) => {
 				</div>
 			</div>
 			<Link to={'/edituserprofile/'} key = {auth.uid}>Edit Profile</Link>
-			<Link to={'/editbio/'} key = {auth.uid}>Edit Bio</Link>
 		</div>
 		)
 	}
@@ -58,7 +57,7 @@ const UserProfile = (props) => {
 		
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
 	return {
 		profile: state.firebase.profile,
 		auth: state.firebase.auth

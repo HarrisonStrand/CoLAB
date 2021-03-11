@@ -70,4 +70,5 @@
 11-1150am: Add handleGear function for Gear checkboxes for firebase auth
 12-135pm: Add User Profile display for attributes
 135-240pm: Add EditBio Component functionality
+240-440pm: Add DefaultValues for EditProfile form
 ```
